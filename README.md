@@ -43,7 +43,8 @@ Technologies
 The broader project work also includes a Kafka and Spark Structured Streaming experiment and a Scala GraphX resource-network experiment. Those components should be added to this GitHub repository as source files if this repository is being used as the complete, reproducible Cluster Computing submission.
 Repository Layout
 The current GitHub snapshot is organized around the deployed dashboard and its prepared data:
-.
+
+
 ├── .streamlit/
 ├── dashboard/
 │   └── app_vercel.py
@@ -56,6 +57,7 @@ The current GitHub snapshot is organized around the deployed dashboard and its p
 ├── Dockerfile.vercel
 ├── requirements-vercel.txt
 └── README.md
+
 The folder listing above reflects the dashboard-focused repository layout. Add the actual cleaning script, Spark processing script, Kafka streaming code, and Scala GraphX source files before describing the repository as containing all project implementation code.
 Run the Dashboard Locally
 Run these commands from the repository root in an environment with Python 3.10 installed. The processed CSV and Parquet files expected by the application must be present under data/processed/.
