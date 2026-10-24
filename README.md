@@ -3,6 +3,7 @@ An interactive dashboard for exploring satellite-based fire detections across Ca
 
 Live dashboard: https://wildfire-intelligence-dashboard.vercel.app  
 GitHub repository: https://github.com/ANA01SHARMA/wildfire-intelligence-dashboard
+
 Project Overview
 Satellite datasets can contain tens of thousands of thermal detections. Before these records are useful for exploration, they need to be cleaned, grouped, and summarized. This project uses Apache Spark to process historical fire-detection data and provides an interactive dashboard for reviewing the resulting geographic patterns.
 
