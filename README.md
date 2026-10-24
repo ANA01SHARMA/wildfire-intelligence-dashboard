@@ -44,26 +44,15 @@ The broader project work also includes a Kafka and Spark Structured Streaming ex
 Repository Layout
 The current GitHub snapshot is organized around the deployed dashboard and its prepared data:
 
-wildfire-intelligence-dashboard/
-│
+.
 ├── .streamlit/
-│   └── config.toml
-│
 ├── dashboard/
 │   └── app_vercel.py
-│
 ├── data/
 │   └── processed/
+│       ├── wildfire_cleaned.csv
 │       ├── grid_hotspots_output/
-│       │   ├── _SUCCESS
-│       │   └── part-*.snappy.parquet
-│       │
-│       ├── ml_hotspot_clusters/
-│       │   ├── _SUCCESS
-│       │   └── part-*.snappy.parquet
-│       │
-│       └── wildfire_cleaned.csv
-│
+│       └── ml_hotspot_clusters/
 ├── .gitignore
 ├── Dockerfile.vercel
 ├── requirements-vercel.txt
