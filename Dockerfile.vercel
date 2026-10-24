@@ -1,0 +1,22 @@
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PIP_NO_CACHE_DIR=1
+ENV STREAMLIT_SERVER_HEADLESS=true
+
+WORKDIR /app
+
+COPY requirements-vercel.txt .
+RUN pip install --no-cache-dir -r requirements-vercel.txt
+
+COPY dashboard/app_vercel.py dashboard/app_vercel.py
+COPY .streamlit/ .streamlit/
+
+COPY data/processed/wildfire_cleaned.csv data/processed/wildfire_cleaned.csv
+COPY data/processed/grid_hotspots_output/ data/processed/grid_hotspots_output/
+COPY data/processed/ml_hotspot_clusters/ data/processed/ml_hotspot_clusters/
+
+EXPOSE 80
+
+CMD ["sh", "-c", "streamlit run dashboard/app_vercel.py --server.address=0.0.0.0 --server.port=${PORT:-80} --server.headless=true --browser.gatherUsageStats=false"]
